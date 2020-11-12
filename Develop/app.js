@@ -95,7 +95,7 @@ function createManager(){
         teamArray.push(manager);
         console.log(teamArray);
         //Function Call to Loop if user wants to add another team member
-        // addNewTeamMember();
+        addMember();
     });
 }
 
@@ -135,7 +135,7 @@ function createEngineer(){
         teamArray.push(engineer);
         console.log(teamArray);
         //Function Call to Loop if user wants to add another team member
-        // addNewTeamMember();
+        addMember();
     });
 }
 
@@ -175,6 +175,31 @@ function createIntern(){
         teamArray.push(intern);
         console.log(teamArray);
         //Function Call to Loop if user wants to add another team member
-        // addNewTeamMember();
+        addMember();
     });
 }
+
+const additionalMember = [
+    {
+    type: "list",
+    name: "newMember",
+    message: "Would you like to add another team memeber?",
+    choices: ["YES","NO"]    
+    }
+]
+
+function addMember(){
+    inquirer.prompt(additionalMember).then(function(response){
+        console.log(response);
+        if(response.newMember === "YES"){
+            return newRolePrompt();
+        }
+        else{
+            console.log(teamArray);
+           
+            console.log("success!");
+        }
+
+    })
+}
+
