@@ -42,3 +42,30 @@ const roleSelect = [
     }
 ];
 
+
+
+
+
+
+const managerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is your name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is your ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is your email address?",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is your office number?",
+      },
+]
