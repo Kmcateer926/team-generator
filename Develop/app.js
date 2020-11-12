@@ -163,3 +163,18 @@ const intern = [
         message: "what school are you currently attending?",
       },
 ]
+
+function createIntern(){
+    inquirer.prompt(intern).then(function(response){
+        const intern = new Intern(
+            response.name,
+            response.id,
+            response.email,
+            response.school
+        );
+        teamArray.push(intern);
+        console.log(teamArray);
+        //Function Call to Loop if user wants to add another team member
+        // addNewTeamMember();
+    });
+}
