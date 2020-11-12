@@ -42,7 +42,21 @@ const roleSelect = [
     }
 ];
 
-
+function newRolePrompt (){
+    inquirer.prompt(roleSelect).then(function(response){
+        if(response.role === "Manager"){
+            console.log("Manager");
+            return createManager();
+        }else if(response.role === "Engineer"){
+            console.log("Engineer");
+            return createEngineer();
+        } else if(response.role === "Intern"){
+            console.log("Intern");
+            return createIntern();
+        }
+    });
+}
+newRolePrompt();
 
 
 
@@ -70,7 +84,20 @@ const manager = [
       },
 ]
 
-
+function createManager(){
+    inquirer.prompt(manager).then(function(response){
+        const manager = new Manager(
+            response.name,
+            response.id,
+            response.email,
+            response.officeNumber
+        );
+        teamArray.push(manager);
+        console.log(teamArray);
+        //Function Call to Loop if user wants to add another team member
+        // addNewTeamMember();
+    });
+}
 
 
 
