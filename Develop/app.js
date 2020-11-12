@@ -196,10 +196,19 @@ function addMember(){
         }
         else{
             console.log(teamArray);
-           
+           createTeam();
             console.log("success!");
         }
 
     })
 }
 
+function createTeam(){
+    fs.writeFile(outputPath,render(teamArray),err =>{
+        if (err){
+            throw err;
+        } else {
+            console.log("Success!");
+        }
+    })
+};
