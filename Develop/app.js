@@ -47,7 +47,7 @@ const roleSelect = [
 
 
 
-const managerQuestions = [
+const manager = [
     {
         type: "input",
         name: "name",
@@ -67,5 +67,32 @@ const managerQuestions = [
         type: "input",
         name: "officeNumber",
         message: "What is your office number?",
+      },
+]
+
+
+
+
+
+const engineer = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is your name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is your ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is your email address?",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is your Github account?",
       },
 ]
