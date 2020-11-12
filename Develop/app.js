@@ -94,7 +94,6 @@ function createManager(){
         );
         teamArray.push(manager);
         console.log(teamArray);
-        //Function Call to Loop if user wants to add another team member
         addMember();
     });
 }
@@ -134,7 +133,6 @@ function createEngineer(){
         );
         teamArray.push(engineer);
         console.log(teamArray);
-        //Function Call to Loop if user wants to add another team member
         addMember();
     });
 }
@@ -174,7 +172,6 @@ function createIntern(){
         );
         teamArray.push(intern);
         console.log(teamArray);
-        //Function Call to Loop if user wants to add another team member
         addMember();
     });
 }
