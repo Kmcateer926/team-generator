@@ -96,3 +96,30 @@ const engineer = [
         message: "What is your Github account?",
       },
 ]
+
+
+
+
+
+const intern = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is your name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is your ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is your email address?",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "what school are you currently attending?",
+      },
+]
