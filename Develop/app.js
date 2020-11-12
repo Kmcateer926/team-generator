@@ -124,7 +124,20 @@ const engineer = [
       },
 ]
 
-
+function createEngineer(){
+    inquirer.prompt(engineer).then(function(response){
+        const engineer = new Engineer(
+            response.name,
+            response.id,
+            response.email,
+            response.github
+        );
+        teamArray.push(engineer);
+        console.log(teamArray);
+        //Function Call to Loop if user wants to add another team member
+        // addNewTeamMember();
+    });
+}
 
 
 
