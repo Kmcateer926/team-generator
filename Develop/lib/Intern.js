@@ -14,12 +14,12 @@ class Intern extends Employee {
 
     //methods to return role and school
     getRole() {
-        return this.role;
-    }
+      return this.role;
+  }
 
-    getSchool() {
-        return this.school;
-    }
+  getSchool() {
+      return this.school;
+  }
 
 };
 
