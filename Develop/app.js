@@ -34,178 +34,166 @@ const teamArray = [];
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 const roleSelect = [
-    {
-        type: "list",
-        name: "role",
-        message: "What is your role?",
-        choices: ["Manager", "Engineer", "Intern"],
-    }
+  {
+    type: "list",
+    name: "role",
+    message: "What is your role?",
+    choices: ["Manager", "Engineer", "Intern"],
+  },
 ];
 
-function newRolePrompt (){
-    inquirer.prompt(roleSelect).then(function(response){
-        if(response.role === "Manager"){
-            console.log("Manager");
-            return createManager();
-        }else if(response.role === "Engineer"){
-            console.log("Engineer");
-            return createEngineer();
-        } else if(response.role === "Intern"){
-            console.log("Intern");
-            return createIntern();
-        }
-    });
+function newRolePrompt() {
+  inquirer.prompt(roleSelect).then(function (response) {
+    if (response.role === "Manager") {
+      console.log("Manager");
+      return createManager();
+    } else if (response.role === "Engineer") {
+      console.log("Engineer");
+      return createEngineer();
+    } else if (response.role === "Intern") {
+      console.log("Intern");
+      return createIntern();
+    }
+  });
 }
 newRolePrompt();
 
-
-
-
 const manager = [
-    {
-        type: "input",
-        name: "name",
-        message: "What is your name?",
-      },
-      {
-        type: "input",
-        name: "id",
-        message: "What is your ID?",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is your email address?",
-      },
-      {
-        type: "input",
-        name: "officeNumber",
-        message: "What is your office number?",
-      },
-]
-
-function createManager(){
-    inquirer.prompt(manager).then(function(response){
-        const manager = new Manager(
-            response.name,
-            response.id,
-            response.email,
-            response.officeNumber
-        );
-        teamArray.push(manager);
-        console.log(teamArray);
-        addMember();
-    });
-}
-
-
+  {
+    type: "input",
+    name: "name",
+    message: "What is your name?",
+  },
+  {
+    type: "input",
+    name: "id",
+    message: "What is your ID?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
+  },
+  {
+    type: "input",
+    name: "officeNumber",
+    message: "What is your office number?",
+  },
+];
 
 const engineer = [
-    {
-        type: "input",
-        name: "name",
-        message: "What is your name?",
-      },
-      {
-        type: "input",
-        name: "id",
-        message: "What is your ID?",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is your email address?",
-      },
-      {
-        type: "input",
-        name: "github",
-        message: "What is your Github account?",
-      },
-]
-
-function createEngineer(){
-    inquirer.prompt(engineer).then(function(response){
-        const engineer = new Engineer(
-            response.name,
-            response.id,
-            response.email,
-            response.github
-        );
-        teamArray.push(engineer);
-        console.log(teamArray);
-        addMember();
-    });
-}
-
-
+  {
+    type: "input",
+    name: "name",
+    message: "What is your name?",
+  },
+  {
+    type: "input",
+    name: "id",
+    message: "What is your ID?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
+  },
+  {
+    type: "input",
+    name: "github",
+    message: "What is your Github account?",
+  },
+];
 
 const intern = [
-    {
-        type: "input",
-        name: "name",
-        message: "What is your name?",
-      },
-      {
-        type: "input",
-        name: "id",
-        message: "What is your ID?",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is your email address?",
-      },
-      {
-        type: "input",
-        name: "school",
-        message: "what school are you currently attending?",
-      },
-]
-
-function createIntern(){
-    inquirer.prompt(intern).then(function(response){
-        const intern = new Intern(
-            response.name,
-            response.id,
-            response.email,
-            response.school
-        );
-        teamArray.push(intern);
-        console.log(teamArray);
-        addMember();
-    });
+  {
+    type: "input",
+    name: "name",
+    message: "What is your name?",
+  },
+  {
+    type: "input",
+    name: "id",
+    message: "What is your ID?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
+  },
+  {
+    type: "input",
+    name: "school",
+    message: "what school are you currently attending?",
+  },
+];
+function createManager() {
+  inquirer.prompt(manager).then(function (response) {
+    const manager = new Manager(
+      response.name,
+      response.id,
+      response.email,
+      response.officeNumber
+    );
+    teamArray.push(manager);
+    console.log(teamArray);
+    addMember();
+  });
+}
+function createEngineer() {
+  inquirer.prompt(engineer).then(function (response) {
+    const engineer = new Engineer(
+      response.name,
+      response.id,
+      response.email,
+      response.github
+    );
+    teamArray.push(engineer);
+    console.log(teamArray);
+    addMember();
+  });
+}
+function createIntern() {
+  inquirer.prompt(intern).then(function (response) {
+    const intern = new Intern(
+      response.name,
+      response.id,
+      response.email,
+      response.school
+    );
+    teamArray.push(intern);
+    console.log(teamArray);
+    addMember();
+  });
 }
 
 const additionalMember = [
-    {
+  {
     type: "list",
     name: "newMember",
     message: "Would you like to add another team memeber?",
-    choices: ["YES","NO"]    
+    choices: ["YES", "NO"],
+  },
+];
+
+function addMember() {
+  inquirer.prompt(additionalMember).then(function (response) {
+    console.log(response);
+    if (response.newMember === "YES") {
+      return newRolePrompt();
+    } else {
+      console.log(teamArray);
+      createTeam();
+      console.log("success!");
     }
-]
-
-function addMember(){
-    inquirer.prompt(additionalMember).then(function(response){
-        console.log(response);
-        if(response.newMember === "YES"){
-            return newRolePrompt();
-        }
-        else{
-            console.log(teamArray);
-           createTeam();
-            console.log("success!");
-        }
-
-    })
+  });
 }
 
-function createTeam(){
-    fs.writeFile(outputPath,render(teamArray),err =>{
-        if (err){
-            throw err;
-        } else {
-            console.log("Success!");
-        }
-    })
-};
+function createTeam() {
+  fs.writeFile(outputPath, render(teamArray), (err) => {
+    if (err) {
+      throw err;
+    } else {
+      console.log("Success!");
+    }
+  });
+}
